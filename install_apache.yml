@@ -9,7 +9,7 @@
     - name:  if line not there
       lineinfile: state=present
                   dest=/var/www/html/index.html
-                  line="Hostname={{ansible_hostname}}"
+                  line="hello STEF"
     - name: restart apache
       service:  name=httpd  state=reloaded enabled=yes 
 

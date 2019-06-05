@@ -7,6 +7,7 @@
     - name: write the index file
       template: src=template.j2 dest=/var/www/html/index.html
       notify:
+        # permet de redemarrer appache (lancement handlers restart httpd si copy faite
         - restart httpd
     - name: ensure apache is running
       service:  name=httpd state=started
