@@ -1,6 +1,8 @@
 ---
 - hosts: centos
   become: true
+  #vars:
+  #  my_var: 'stef var'
   tasks:
     - name:  install epel
       yum:
@@ -12,7 +14,7 @@
         state: present
     - name:  install index page
       template:
-        src: index.html
+        src: stef_temp.j2
         dest: /usr/share/nginx/html/index.html
     - name: start nging
       service:
